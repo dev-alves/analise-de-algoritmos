@@ -9,15 +9,15 @@ const shellsort = ( array ) => {
 
     do {
         h = Math.round( h / 3 );
-        novoArray.map( function( elemento, indice = h, arrayAux ) {
-            temp = arrayAux[ indice ];
+        novoArray.map( function( elemento, indice = h, novoArray ) {
+            temp = novoArray[ indice ];
             j = indice;
-            while( arrayAux[ j - h ] > temp ) {
-                arrayAux[ j ] = arrayAux[ j - h ];
+            while( novoArray[ j - h ] > temp ) {
+                novoArray[ j ] = novoArray[ j - h ];
                 j = j - h;
                 if( j < h ) break;
             }
-            arrayAux[ j ] = temp;
+            novoArray[ j ] = temp;
         });
     } while( h !== 1 );
     return novoArray;
