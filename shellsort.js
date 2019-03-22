@@ -20,7 +20,9 @@ const shellsort = ( array ) => {
             novoArray[ j ] = temp;
         });
     } while( h !== 1 );
+
     return novoArray;
+    
 }
 
 module.exports = shellsort;
