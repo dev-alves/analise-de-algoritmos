@@ -1,3 +1,4 @@
+console.time('shellsort');
 const shellsort = ( array ) => {
     
     let novoArray = [...array ];
@@ -24,5 +25,6 @@ const shellsort = ( array ) => {
     return novoArray;
     
 }
+console.timeEnd('shellsort');
 
 module.exports = shellsort;
