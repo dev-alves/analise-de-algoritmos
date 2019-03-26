@@ -1,4 +1,3 @@
-console.time('quicksort');
 const particionar = ( inicio, array ) => ({
     selecionarPivo: ( pivo ) => {
         for( let i = inicio; i < pivo; i++ ) {
@@ -35,6 +34,5 @@ const quicksort = ( array ) => ({
         quicksort( array ).inicioEFim( inicio + 1, fim );
     }
 });
-console.timeEnd('quicksort');
 
 module.exports = quicksort;

@@ -1,4 +1,4 @@
-const TAM = 100;
+const TAM = 1000000;
 let vetor = new Array( TAM );
 
 const media = Math.round( TAM * 0.90 );
@@ -20,8 +20,8 @@ const randomizar = () => {
     
     for( let i = 0; i <= TAM; i ++ ) {
         let valorRandomico = randomValue();
-        if(vetor[i] === undefined ) {
-            while( vetor.some( (element) => element === valorRandomico) ) {
+        if(vetor[ i ] === undefined ) {
+            while( vetor.some( ( element ) => element === valorRandomico ) ) {
                 valorRandomico = randomValue();
             }
             vetor[ i ] = valorRandomico;
@@ -29,6 +29,7 @@ const randomizar = () => {
     }
 
     return vetor;
+
 }
 
 
