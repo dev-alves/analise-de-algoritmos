@@ -1,15 +1,15 @@
-const TAM = 100;
-let vetor = new Array( TAM );
-
-const media = Math.round( TAM * 0.90 );
-
-const randomIndice = () => Math.floor( Math.random( ) * ( TAM ) );
-const randomValue = () => Math.round( Math.random() * 100000 );
-
-const n = randomIndice();
-
-let indice = 0;
 const randomizar = () => {
+    const TAM = 100;
+    let vetor = new Array( TAM );
+    
+    const media = Math.round( TAM * 0.90 );
+    
+    const randomIndice = () => Math.floor( Math.random( ) * ( TAM ) );
+    const randomValue = () => Math.round( Math.random() * 100000 );
+    
+    const n = randomIndice();
+    
+    let indice = 0;
     do {
         const indiceRandom = randomIndice();
         if( vetor[ indiceRandom ] === undefined ) {
@@ -29,7 +29,6 @@ const randomizar = () => {
     }
 
     return vetor;
-
 }
 
 
