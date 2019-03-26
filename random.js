@@ -1,4 +1,4 @@
-const TAM = 1000000;
+const TAM = 100;
 let vetor = new Array( TAM );
 
 const media = Math.round( TAM * 0.90 );

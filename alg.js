@@ -7,15 +7,15 @@ const iniciarArray = ( array ) => ({
 });
 
 console.time('random');
-const arrayShell = random()
+const arrayShellSortTest = random()
 console.timeEnd('random');
 
 console.time('shellsort');
 
-iniciarArray( arrayShell ).algoritmoDeOrdenacao( shellsort );
+const arrayShellSortOrdenado = iniciarArray( arrayShellSortTest ).algoritmoDeOrdenacao( shellsort );
 console.timeEnd('shellsort');
 
-console.log( 'Array [Shell Sort] => ',  arrayShell );
+console.log( 'Array [Shell Sort] => ',  arrayShellSortOrdenado );
 
 const arrayRandom = random();
 
