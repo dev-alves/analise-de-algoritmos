@@ -43,10 +43,19 @@ console.timeEnd('shellsort-medioCaso');
 console.log( 'Array [Shell Sort Melhor Caso] => ',  arrayShellSortOrdenadoMelhorCaso );
 console.log( 'Array [Shell Sort Medio Caso] => ',  arrayShellSortOrdenadoMedioCaso );
 
-const arrayRandom = random();
+let arrayQuickSortMedioCaso = medioCaso( random() );
+let arrayQuickSortMelhorCaso = melhorCaso( random() );
 
-/*console.time('quicksort');
-quickSort( arrayRandom ).inicioEFim( 0, arrayRandom.length - 1);
-console.timeEnd('quicksort');
 
-console.log( 'Array [Quick Sort] => ', arrayRandom );*/
+console.time('quicksort-MedioCaso');
+quickSort( arrayQuickSortMedioCaso ).inicioEFim( 0, arrayQuickSortMedioCaso.length - 1);
+console.timeEnd('quicksort-MedioCaso');
+
+console.log( 'Array [Quick Sort Medio Caso] => ', arrayQuickSortMedioCaso );
+
+
+console.time('quicksort-MelhorCaso');
+quickSort( arrayQuickSortMelhorCaso ).inicioEFim( 0, arrayQuickSortMelhorCaso.length - 1);
+console.timeEnd('quicksort-MelhorCaso');
+
+console.log( 'Array [Quick Sort Melhor Caso] => ', arrayQuickSortMelhorCaso );

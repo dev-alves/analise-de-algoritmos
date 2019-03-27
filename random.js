@@ -1,5 +1,5 @@
 const randomizar = () => {
-    const TAM = 100;
+    const TAM = 1000;
     let vetor = new Array( TAM );
     
     const media = Math.round( TAM * 0.90 );
