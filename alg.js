@@ -1,6 +1,9 @@
 const shellsort = require('./shellsort');
 const quickSort = require('./quicksort');
-const random = require('./random');
+const randomA = require('./randomA')( 9000 ); // a última chamada, é o tamanho do vetor
+const randomB = require('./randomB')( 9000 ); // a última chamada, é o tamanho do vetor
+
+/* Array para testes de melhor, medio e pior caso
 
 const melhorCaso = ( array ) => array.sort( ( a, b ) => {
     if( a < b )
@@ -21,41 +24,34 @@ const medioCaso = ( array ) => {
     });
 
     return [ ...primeiraMetade, ...segundaMetade ];
-}
+}*/
 
 const iniciarArray = ( array ) => ({
     algoritmoDeOrdenacao: ( algortimo ) => algortimo( array ) 
 });
 
-const arrayShellSortMelhorCaso = melhorCaso( random() );
-console.log( 'vetor melhor caso => ', arrayShellSortMelhorCaso );
-const arrayShellSortMedioCaso = medioCaso( random() );
-console.log( 'vetor medio caso => ', arrayShellSortMedioCaso );
+console.time('shellsortA');
+const arrayShellSortA = iniciarArray( randomA ).algoritmoDeOrdenacao( shellsort );
+console.timeEnd('shellsortA');
 
-console.time('shellsort-melhorCaso');
-const arrayShellSortOrdenadoMelhorCaso = iniciarArray( arrayShellSortMelhorCaso ).algoritmoDeOrdenacao( shellsort );
-console.timeEnd('shellsort-melhorCaso');
+console.log( 'Array [Shell SortA] => ',  arrayShellSortA );
 
-console.time('shellsort-medioCaso');
-const arrayShellSortOrdenadoMedioCaso = iniciarArray( arrayShellSortMedioCaso ).algoritmoDeOrdenacao( shellsort );
-console.timeEnd('shellsort-medioCaso');
+console.time('shellsortB');
+const arrayShellSortB = iniciarArray( randomB ).algoritmoDeOrdenacao( shellsort );
+console.timeEnd('shellsortB');
 
-console.log( 'Array [Shell Sort Melhor Caso] => ',  arrayShellSortOrdenadoMelhorCaso );
-console.log( 'Array [Shell Sort Medio Caso] => ',  arrayShellSortOrdenadoMedioCaso );
+console.log( 'Array [Shell SortB] => ',  arrayShellSortB );
 
-let arrayQuickSortMedioCaso = medioCaso( random() );
-let arrayQuickSortMelhorCaso = melhorCaso( random() );
+const quickA = randomA;
+console.time('quicksortA');
+quickSort( quickA ).inicioEFim( 0, quickA.length - 1);
+console.timeEnd('quicksortA');
 
+console.log( 'Array [Quick Sort A] => ', quickA );
 
-console.time('quicksort-MedioCaso');
-quickSort( arrayQuickSortMedioCaso ).inicioEFim( 0, arrayQuickSortMedioCaso.length - 1);
-console.timeEnd('quicksort-MedioCaso');
+const quickB = randomB;
+console.time('quicksortB');
+quickSort( quickB ).inicioEFim( 0, quickB.length - 1);
+console.timeEnd('quicksortB');
 
-console.log( 'Array [Quick Sort Medio Caso] => ', arrayQuickSortMedioCaso );
-
-
-console.time('quicksort-MelhorCaso');
-quickSort( arrayQuickSortMelhorCaso ).inicioEFim( 0, arrayQuickSortMelhorCaso.length - 1);
-console.timeEnd('quicksort-MelhorCaso');
-
-console.log( 'Array [Quick Sort Melhor Caso] => ', arrayQuickSortMelhorCaso );
+console.log( 'Array [Quick Sort B] => ', quickB );
